@@ -9,7 +9,7 @@ in order to modify existing animation and games software.
 
 ### Level: 2
 ### Credit Units: 5
-### Presentation Pattern: EVERY JULY
+### Presentation Pattern: Every July
 
 ## Topics
 * Fundamentals of C++ programming
@@ -26,4 +26,4 @@ in order to modify existing animation and games software.
 * Implement multimedia applications using C++ language in an objected-oriented programming style
 * Apply C++ language to program games
 * Discuss how C++ language can work with graphics surfaces
-( )Appraise the use of SDL for input and sound
+* Appraise the use of SDL for input and sound
