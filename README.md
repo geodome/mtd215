@@ -1,5 +1,10 @@
 # MTD215 Application of C++ in Multimedia
 
+## Study Notes for Tuition Students
+if you need tuition, please contact me via
+* telegram @geodome
+* email maths_and_programming@outlook.sg
+
 ## Synopsis
 The course provides greater programming exposure to multimedia students who have completed ICT131, 
 as an alternative to MTD213. The course briefly covers the basics of the C++ language and focuses on
