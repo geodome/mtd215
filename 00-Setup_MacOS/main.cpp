@@ -21,14 +21,6 @@
         SDL_Quit();
         return 1;
     }
-    // create renderer
-    SDL_Renderer* gRenderer = SDL_CreateRenderer(gWindow,-1,0);
-    if(gRenderer == nullptr) {
-        std::cerr << SDL_GetError() << std::endl;
-        SDL_DestroyWindow(gWindow);
-        SDL_Quit();
-        return 1;
-    }
 
     // main loop
     bool quit = false;
@@ -37,6 +29,7 @@
         while(SDL_PollEvent(&e)) {
             switch(e.type) {
                 case SDL_QUIT:
+                std::cout << "closing window" << std::endl;
                 quit = true;
                 break;
                 default:
@@ -49,7 +42,6 @@
     }
 
     // clean up
-    SDL_DestroyRenderer(gRenderer);
     SDL_DestroyWindow(gWindow);
     SDL_Quit();
 
