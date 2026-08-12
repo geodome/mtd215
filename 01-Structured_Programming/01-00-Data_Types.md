@@ -3,10 +3,19 @@
 ## Data Types
 
 ### Integer
-### Float
-### Double
+* `int`
+* `uint8_t`
+    * fixed width of 8 bits
+    * unsigned integer
+    * represents 0 to 255
+### Floating-Point
+* `float`
+* `double`
 ### Boolean
-### Char
+* `bool`
+
+### Characters
+* `char`
 ### Array
 ### String
 ### Enum
