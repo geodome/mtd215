@@ -44,9 +44,14 @@
             }
         }
         // nothing to render since this is supposed to be a blanks screen;
-        // 17ms delay means 50 fps
+        // 17ms delay means 60 fps animation
         SDL_Delay(17);
     }
+
+    // clean up
+    SDL_DestroyRenderer(gRenderer);
+    SDL_DestroyWindow(gWindow);
+    SDL_Quit();
 
     return 0;
  
