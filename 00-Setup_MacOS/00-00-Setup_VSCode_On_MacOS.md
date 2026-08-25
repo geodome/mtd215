@@ -32,39 +32,6 @@ Inside terminal, run the following commands
 * Append `/opt/homebrew/include` to Include Path
 * Choose `C++ 23` for C++ Standard
 
-### Configure the Compiler
-* Type shift-cmd-p
-* Select Tasks: Configure Task
-* Select C/C++: g++ build active file
-* It will generate the following JSON in .vscode/tasks.json
-```json
-{
-    "tasks": [
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "detail": "compiler: /usr/bin/g++"
-        }
-    ]
-}   
-```
-* replace the label field with "C/C++: g++ build with SDL2"
-* append the following to the args list:
     * "-I/opt/homebrew/include",
     * "-L/opt/homebrew/lib",
     * "-lSDL2",
