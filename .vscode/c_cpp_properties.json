@@ -9,8 +9,16 @@
             "defines": [],
             "cStandard": "c17",
             "intelliSenseMode": "macos-gcc-arm64",
+            "cppStandard": "c++23",
             "compilerPath": "/usr/bin/g++",
-            "cppStandard": "c++23"
+            "compilerArgs": [
+                "-L/opt/homebrew/lib",
+                "-lSDL2",
+                "-lSDL2_image",
+                "-lSDL2_ttf",
+                "-lSDL2_mixer",
+                "-lSDL2_net"
+            ]
         }
     ],
     "version": 4
