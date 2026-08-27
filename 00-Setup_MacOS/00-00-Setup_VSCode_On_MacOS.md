@@ -10,13 +10,18 @@
 * Download and install Homebrew at https://brew.sh/
 
 ## Install SDL2
-
-Inside terminal, run the following commands
-* brew install SDL2
-* brew install SDL2_image
-* brew install SDL2_ttf
-* brew install SDL2_mixer
-* brew install SDL2_net
+* We will be installing the following packages:
+    * the main SDL2 library
+    * the SDL2 image extension for handling imqge files
+    * the SDL2 ttf extension to handle true type fonts for text rendering
+    * the SDL2 mixer extension to handle sound
+    * the SDL2 network extension to handle networking
+* Inside terminal, run the following commands:
+    * `brew install SDL2`
+    * `brew install SDL2_image`
+    * `brew install SDL2_ttf`
+    * `brew install SDL2_mixer`
+    * `brew install SDL2_net`
 
 ## Setup C/C++ Project with SDL2
 * This setup assumes the following project directory structure
