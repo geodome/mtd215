@@ -34,7 +34,7 @@ void display_numbers(int* numbers) {
     for(int i=0; i<10;i++) {
         std::cout << "====" << " ";        
     }
-
+    std::cout << std::endl;
 }
 
 bool sorted(int* numbers) {
@@ -69,6 +69,7 @@ int main() {
             int temp = numbers[index1];
             numbers[index1] = numbers[index2];
             numbers[index2] = temp;
+            std::cout << "indices " << index1 << " and " << index2 << " are swapped." << std::endl;
         } else 
             // error
             std::cout << "Error: Cannot swap non-adjacent elements" << std::endl;
