@@ -50,6 +50,7 @@
     * choose `macos-gcc-x64` if you are on Intel CPU
 * Append `/opt/homebrew/include` to Include Path
     * this enables intellisense to find the SDL2 header files and provides code hinting and autocomplete
+    * this informs the compiler to search this folder for SDL2 header files during compilation
 * Choose `C++ 23` for C++ Standard
 
 ### Task Runner
