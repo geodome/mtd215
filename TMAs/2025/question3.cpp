@@ -74,5 +74,10 @@ int main() {
             // error
             std::cout << "Error: Cannot swap non-adjacent elements" << std::endl;
     }
+
+    // congrats message
+    display_numbers(numbers);
+    std::cout << "Congratulations, the numbers are now sorted in increasing order." << std::endl;
+
     return 0;
 }
