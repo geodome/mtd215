@@ -30,6 +30,8 @@ int main(int argc, char* argv[]) {
     // congrat user for sorting the number
     display_numbers(num,10);
     std::cout << "congrats" << std::endl;
+    
+    return 0;
 }
 
 void generate_numbers(int numbers[], int size) {
