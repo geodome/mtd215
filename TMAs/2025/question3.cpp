@@ -3,16 +3,15 @@
 
 void generate_numbers(int numbers[], int size);
 void display_numbers(int numbers[], int size);
-bool sorted(int numbers[], int size);
+bool is_sorted(int numbers[], int size);
 bool is_adjacent(int index1, int index2);
 bool is_unique(int n, int numbers[], int i);
 
-// ask name and score for 12 players
 int main(int argc, char* argv[]) {
     int num[10];
     int index1, index2;
     generate_numbers(num, 10);
-    while(!sorted(num, 10)) {
+    while(!is_sorted(num, 10)) {
         display_numbers(num, 10);
         std::cout << "Enter index 1: ";
         std::cin >> index1;
@@ -58,7 +57,7 @@ void display_numbers(int numbers[], int size) {
     std::cout << std::endl;
 }
 
-bool sorted(int numbers[], int size) {
+bool is_sorted(int numbers[], int size) {
     for(int i=1; i<size; i++) {
         if(numbers[i] < numbers[i-1]) return false;
     }
