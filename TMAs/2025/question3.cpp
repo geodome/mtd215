@@ -3,6 +3,7 @@
 
 void generate_numbers(int numbers[], int size);
 void display_numbers(int numbers[], int size);
+std::string zeroes(int n);
 bool is_sorted(int numbers[], int size);
 bool is_adjacent(int index1, int index2);
 bool is_unique(int n, int numbers[], int i);
@@ -30,14 +31,14 @@ int main(int argc, char* argv[]) {
     // congrat user for sorting the number
     display_numbers(num,10);
     std::cout << "congrats" << std::endl;
-    
+
     return 0;
 }
 
 void generate_numbers(int numbers[], int size) {
     int i = 0;
     while(i < size) {
-        int n = rand() % 10000;
+        int n = rand() % 10000; // n is 0 to 9999
         if(is_unique(n, numbers, i)) {
             numbers[i] = n;
             i++;
@@ -53,11 +54,30 @@ bool is_unique(int n, int numbers[], int i) {
 }
 
 void display_numbers(int numbers[], int size) {
+    std::cout << std::endl << "+";
     for(int i=0; i < size; i++) {
-        std::cout << numbers[i] << "  ";
+        std::cout << "------+";
     }
     std::cout << std::endl;
+    std::cout << "|";
+    for(int i=0; i < size; i++) {
+        std::cout << " " << zeroes(numbers[i]) << numbers[i] << " |";
+    }
+    std::cout << std::endl << "+";
+    for(int i=0; i < size; i++) {
+        std::cout << "------+";
+    }
+    std::cout << std::endl;
+
 }
+
+std::string zeroes(int n) {
+    if(n < 10) return "000";
+    if(n < 100) return "00";
+    if(n < 1000) return "0";
+    return "";
+}
+
 
 bool is_sorted(int numbers[], int size) {
     for(int i=1; i<size; i++) {
