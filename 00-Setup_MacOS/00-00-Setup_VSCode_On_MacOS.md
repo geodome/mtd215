@@ -92,7 +92,26 @@ Then vscode will generate the following `.vscode/tasks.json`
     "version": "2.0.0"
 } 
 ```
-
+### Compiler Arguments
+* The `args` field contains a list of compiler arguments for the g++ compiler
+    * `-g` 
+        * enables debug mode. 
+        * It compiles a binary output that can communicate debugging information to the VSCode debugger.
+    * `${file}` 
+        * refers to the target file to be compiled. e.g. `mtd215_tma/question1.cpp`
+    * `-o ${fileDirname}/${fileBasenameNoExtension}`
+        * indicates the output file
+    * `-I/opt/homebrew/include`
+        * `homebrew` installs the SDL2 header files in `/opt/homebrew/include` directory
+        * Tells the compiler to search the `/opt/homebrew/include` for header files
+    * `-L/opt/homebrew/lib -lSDL2 0lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_net`
+        * tells the linker to search `/opt/homebrew/lib` for the library binaries of
+            * SDL2
+            * SDL2_image extension
+            * SDL2_ttf extension
+            * SDL2_mixer extension
+            * SDL2_net extension
+    * ``
 ### Testing
 * Copy 00-Setup_MacOS/main.cpp to your project
 * Open main.cpp in VSCode
