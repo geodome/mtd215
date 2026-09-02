@@ -101,6 +101,9 @@ Then vscode will generate the following `.vscode/tasks.json`
         * refers to the target file to be compiled. e.g. `mtd215_tma/question1.cpp`
     * `-o ${fileDirname}/${fileBasenameNoExtension}`
         * indicates the output file
+        * using the example of `mtd215_tma/question1.cpp`
+            * `${fileDirName}` refers to `mtd215_tma`
+            * `${fileBasenameNoExtension}` refers to `question1`.
     * `-I/opt/homebrew/include`
         * `homebrew` installs the SDL2 header files in `/opt/homebrew/include` directory
         * Tells the compiler to search the `/opt/homebrew/include` for header files
@@ -111,7 +114,7 @@ Then vscode will generate the following `.vscode/tasks.json`
             * SDL2_ttf extension
             * SDL2_mixer extension
             * SDL2_net extension
-    * ``
+    
 ### Testing
 * Copy 00-Setup_MacOS/main.cpp to your project
 * Open main.cpp in VSCode
