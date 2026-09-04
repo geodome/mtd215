@@ -21,19 +21,19 @@
     * `bool`: `true` (1) or `false` (0)
 * How to declare
      ```C++
-     int a1;                // uninitialised integer a1.
-     int a2 = 3;            // integer a2 with initial value of 3
-     int a3{10};            // integer a3 with initial value of 10, using initialiser syntax
-     int a4{};              // initialise integer a4 with default value of 0
+    int a1;                // uninitialised integer a1.
+    int a2 = 3;            // integer a2 with initial value of 3
+    int a3{10};            // integer a3 with initial value of 10, using initialiser syntax
+    int a4{};              // initialise integer a4 with default value of 0
 
-     double b;              // uninitialisd double
-     double pi = 3.14159;   // double pi with initial value of 3.14159
-     double euler{2.71828}; //  initialise double euler with 2.71828
+    double b;              // uninitialisd double
+    double pi = 3.14159;   // double pi with initial value of 3.14159
+    double euler{2.71828}; //  initialise double euler with 2.71828
 
-     char c1;               // uninitialised character
-     char c2 = 'a';         // character c2 initialised with 'a' value
-     char c3{'d'};          // character d3 initialised with 'd'
-     char c4{};             // char c4 initialised with default value '\0'
+    char c1;               // uninitialised character
+    char c2 = 'a';         // character c2 initialised with 'a' value
+    char c3{'d'};          // character d3 initialised with 'd'
+    char c4{};             // char c4 initialised with default value '\0'
      
     bool e;                 // uninitialised boolean variable
     bool e1 = true;         // You may initialise a boolean variable with true/false
