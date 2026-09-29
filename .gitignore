@@ -70,3 +70,5 @@ Testing/
 *.out
 *.DS_Store
 *.dSYM
+main 
+main.dSYM/
