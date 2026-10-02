@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
     }
 
     // SDL_CreateWindow() returns null pointer if error
+    // the flags parameter is set 0, so no window flag is turned on.
     SDL_Window* gWindow = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0);
     if(gWindow == nullptr) {
         std::cerr << SDL_GetError() << "\n";
@@ -33,7 +34,7 @@ int main(int argc, char* argv[]) {
     }
 
     // White background color
-    Uint32 bgcolor = SDL_MapRGB(gSurface->format, 0xff, 0xff, 0xff);
+    uint32_t bgcolor = SDL_MapRGB(gSurface->format, 0xff, 0xff, 0xff);
 
     // The main loop consists of
     // * event loop
@@ -61,6 +62,11 @@ int main(int argc, char* argv[]) {
 
         SDL_FillRect(gSurface, nullptr, bgcolor);
         SDL_UpdateWindowSurface(gWindow);
+
+        // Sleep phase
+        // This determines the refresh rate
+        // For refresh rate of 60fps, 1000ms/60fps = 17ms per frame
+        SDL_Delay(17);
     }
 
     // Begin cleanup
