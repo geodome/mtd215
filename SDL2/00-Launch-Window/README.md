@@ -21,3 +21,4 @@ The Main Loop consists of
 The Clean-up
 * Destroy/Free all Graphic Objects
 * Quit the SDL2 subsystems
+s
