@@ -56,7 +56,6 @@ void drawShape(SDL_Renderer* gRenderer) {
     int x0 = GAP;
     int y0 = GAP;
     for(int n = 4; n > 0; n--) {
-        x0 = GAP;
         for(int i=0; i < n; i++) {
             int x1 = x0 + UNIT;
             int y1 = y0;
@@ -69,6 +68,8 @@ void drawShape(SDL_Renderer* gRenderer) {
             SDL_RenderDrawLine(gRenderer, x3, y3, x1, y1);
             x0 += 2*UNIT + GAP;
         }
+        // reset x0 and set y0 for next row
+        x0 = GAP;
         y0 += 2*UNIT + GAP;
     }
 }
