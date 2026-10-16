@@ -8,6 +8,7 @@
 
 int main(int argc, char* argv[]) {
     // SDL_init phase
+    // Compared to 00-Launch-Window, we are adding line 30-42 to the SDL_Init phase
 
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         std::cerr << SDL_GetError() << "\n";
@@ -67,7 +68,7 @@ int main(int argc, char* argv[]) {
             switch(e.type) {
                 case SDL_QUIT:
                 quit = true;
-                std::cout << "quit event triggered\n";
+                std::cout << "quit event triggered" << "\n";
                 break;
                 default:
                 break;
@@ -79,6 +80,12 @@ int main(int argc, char* argv[]) {
     }
 
     // SDL Cleanup
+    // To add clean up for SDL2_TTF components
+    TTF_CloseFont(arial);
+    SDL_FreeSurface(textSurface);
+    SDL_DestroyTexture(textTexture);
+    TTF_Quit();
+    // clean up for SDL2 components
     SDL_DestroyRenderer(gRenderer);
     SDL_DestroyWindow(gWindow);
 
