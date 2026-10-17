@@ -5,9 +5,11 @@
 #define WIDTH 800
 #define HEIGHT 600
 #define WHITE {0xff, 0xff, 0xff, 0xff}
+#define BLACK {0x00, 0x00, 0x00, 0xff}
 #define UNIT 10
 
 void fillCircle(SDL_Renderer* gRenderer, int radius, int x, int y, SDL_Color fgcolor);
+void drawCircle(SDL_Renderer* gRenderer, int radius, int thickness, int x, int y, SDL_Color fgcolor, SDL_Color bgcolor);
 
 int main(int argc, char* argv[]) {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
@@ -27,15 +29,11 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // define circle coordinate
-    int x = 100;
-    int y = 100;
-    int r = 50;
-
     // initial render with white background and black circle
     SDL_SetRenderDrawColor(gRenderer, 0xff, 0xff, 0xff, 0xff);
     SDL_RenderClear(gRenderer);
-    fillCircle(gRenderer, r, x, y, {0x00, 0x00, 0x00, 0xff});
+    fillCircle(gRenderer, 50, 100, 100, BLACK);
+    drawCircle(gRenderer, 50, 10, 300, 100, BLACK, WHITE);
     SDL_RenderPresent(gRenderer);
 
     bool quit = false;
@@ -84,4 +82,9 @@ void fillCircle(SDL_Renderer* gRenderer, int radius, int x, int y, SDL_Color fgc
         SDL_RenderDrawLine(gRenderer, x3, y3, x4, y4);
     }
     
+}
+
+void drawCircle(SDL_Renderer* gRenderer, int radius, int thickness, int x, int y, SDL_Color fgcolor, SDL_Color bgcolor) {
+    fillCircle(gRenderer, radius, x, y, fgcolor);
+    fillCircle(gRenderer, radius - thickness, x + thickness, y + thickness, bgcolor);    
 }
