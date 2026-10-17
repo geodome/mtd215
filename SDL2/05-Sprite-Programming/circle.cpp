@@ -49,8 +49,8 @@ int main(int argc, char* argv[]) {
                 quit = true;
                 std::cout << "quit event triggered\n";
                 break;
-                //Put in keyboard function as "WASD"
                 case SDL_KEYDOWN:
+                // specify handler for WASD (arrow) keys
                 if(e.key.keysym.scancode == SDL_SCANCODE_W) {
                     dy = -UNIT;
                 }
@@ -72,26 +72,29 @@ int main(int argc, char* argv[]) {
             }
         }
 
-        // update
+        // update phase
         x += dx;
         y += dy;
+        // if hits left wall
         if (x < 0) {
             x = 0;
             dx = (1 + rand() % 2) * UNIT;
         }
+        // if hits right wall
         if (x + 2*r > WIDTH) {
             x = WIDTH - 2*r;
             dx = - (1 + rand() % 2) * UNIT;
         }
+        // if hits top wall
         if (y < 0) {
             y = 0;
             dy = (1 + rand() % 2) * UNIT;
         }
+        // if hits bottom wall
         if (y + 2*r > HEIGHT){
             y = HEIGHT - 2*r;
             dy = -(1 + rand() % 2) * UNIT;
         } 
-        
 
         // render phase
         SDL_SetRenderDrawColor(gRenderer, 0xff, 0xff, 0xff, 0xff);
