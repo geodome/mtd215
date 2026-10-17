@@ -85,6 +85,7 @@ void fillCircle(SDL_Renderer* gRenderer, int radius, int x, int y, SDL_Color fgc
 }
 
 void drawCircle(SDL_Renderer* gRenderer, int radius, int thickness, int x, int y, SDL_Color fgcolor, SDL_Color bgcolor) {
+    // drawing a circular line is just overlapping 2 filled circles of different colours.
     fillCircle(gRenderer, radius, x, y, fgcolor);
     fillCircle(gRenderer, radius - thickness, x + thickness, y + thickness, bgcolor);    
 }
