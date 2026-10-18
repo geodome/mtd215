@@ -53,10 +53,10 @@ int main(int argc, char* argv[]) {
 void drawShape(SDL_Renderer* gRenderer) {
     SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0x00, 0xff);
     bool fillRect = true;
+    int x = GAP;
+    int y = GAP;
     for(int row = 0; row < 4; row++) {
         for(int col=0; col < 4; col++) {
-            int x = (col + 1) * GAP + col*SIDE;
-            int y = (row + 1) * GAP + row*SIDE;
             SDL_Rect rect{x,y,SIDE,SIDE};
             if(fillRect) {
                 SDL_RenderFillRect(gRenderer,&rect);
@@ -64,7 +64,11 @@ void drawShape(SDL_Renderer* gRenderer) {
                 SDL_RenderDrawRect(gRenderer, &rect);
             }
             fillRect = !fillRect;
+            x += SIDE + GAP;
         }
+        // reset filLRect flag, x, y for next row
         fillRect = ! fillRect;
+        x = GAP;
+        y += SIDE + GAP;
     }
 }
